@@ -1,3 +1,14 @@
+const HIDatabase = {}
+
+
+////////////////// Database
+
+
+HIDatabase.furniture = []
+HIDatabase.crafts = []
+HIDatabase.electronics = []
+
+
 ////////////////// Furniture
 
 const writingDesk = {
@@ -64,13 +75,7 @@ const gamingMonitor = {
     description: "A terrific monitor that consistently gets 60fps if not 100fps."
 }
 
-////////////////// Database
-
-const HIDatabase = {
-    furniture : [],
-    crafts : [],
-    electronics : []
-}
+////////////////// Push objects to arrays
 
 HIDatabase.crafts.push(vintageInkwell);
 HIDatabase.crafts.push(fountainPen);
@@ -84,3 +89,27 @@ HIDatabase.electronics.push(gamingKeyboard);
 HIDatabase.electronics.push(gamingMonitor);
 
 console.log(HIDatabase)
+
+// Persist the database to localStorage
+saveDatabase(HomeInventoryDatabase, "HomeInventory")
+
+// const saveDatabase = function (databaseObjectlocalStorageKey) {
+//     /*
+//         Convert the Object into a string.
+//     */
+//     const stringifiedDatabase = JSON.stringify(databaseObject)
+
+//     /*
+//         Create a key in local storage, and store the string
+//         version of your inventory database as the value
+//     */
+//     localStorage.setItem(localStorageKey, stringifiedDatabase)  
+// }
+
+// const loadDatabase = function (localStorageKey) {
+//     // Get the string version of the database
+//     const databaseString = localStorage.getItem(localStorageKey)
+
+//     // Use JSON.parse() to convert the string back into an object
+//     return JSON.parse(databaseString)
+// }
